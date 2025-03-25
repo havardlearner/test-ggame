@@ -1,0 +1,361 @@
+.home-container {
+  min-height: 100vh;
+  background-color: #0f0f1a;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-section {
+  height: 80vh;
+  background: linear-gradient(rgba(10, 10, 25, 0.8), rgba(10, 10, 25, 0.9)), 
+              url('/assets/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add animated particle background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(0, 170, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle, rgba(0, 120, 210, 0.1) 1px, transparent 1px);
+  background-size: 80px 80px, 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: animateBackground 60s linear infinite;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 1000px 1000px, 1020px 1020px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.game-title {
+  font-size: 5rem;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+  color: #ffffff;
+}
+
+.io-text {
+  color: #00aaff;
+}
+
+.game-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+  color: #cccccc;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.play-button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+}
+
+.play-button:hover {
+  background-color: #0088cc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.5);
+}
+
+.play-button:active {
+  transform: translateY(1px);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.auth-button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.login {
+  background-color: #333355;
+  color: white;
+}
+
+.login:hover {
+  background-color: #444466;
+}
+
+.register {
+  background-color: #1f3a63;
+  color: white;
+}
+
+.register:hover {
+  background-color: #264b7e;
+}
+
+.profile-button {
+  background-color: #333355;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.profile-button:hover {
+  background-color: #444466;
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.content-section {
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.how-to-play-section {
+  grid-column: 1 / -1;
+}
+
+.section-title {
+  color: #00aaff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #00aaff;
+}
+
+.announcement-card {
+  background-color: #242442;
+  padding: 20px;
+  border-radius: 5px;
+  border-left: 4px solid #00aaff;
+}
+
+.announcement-card h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.announcement-date {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: right;
+}
+
+.leaderboard {
+  background-color: #242442;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.leaderboard-header {
+  background-color: #333355;
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: 50px 1fr 100px;
+  font-weight: bold;
+}
+
+.leaderboard-row {
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: 50px 1fr 100px;
+  border-bottom: 1px solid #333355;
+  transition: background-color 0.2s;
+}
+
+.leaderboard-row:hover {
+  background-color: #2a2a4a;
+}
+
+.rank-col {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+.player-col {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-col {
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: #cccccc;
+}
+
+.view-all {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background-color: #333355;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.view-all:hover {
+  background-color: #444466;
+}
+
+.loading {
+  padding: 30px;
+  text-align: center;
+  color: #888;
+}
+
+.how-to-play-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.step {
+  background-color: #242442;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #00aaff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.step h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.home-footer {
+  background-color: #0a0a15;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #00aaff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 3.5rem;
+  }
+  
+  .game-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .home-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .how-to-play-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+} 

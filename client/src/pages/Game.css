@@ -1,0 +1,246 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+  background-color: #1a1a2e;
+  color: white;
+  width: 100%;
+}
+
+#game-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-setup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.settings-panel {
+  background-color: #242442;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.settings-panel h2 {
+  color: #00aaff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.start-button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.start-button:hover {
+  background-color: #0088cc;
+}
+
+.game-overlay {
+  position: absolute;
+  top: 64px;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.game-stats {
+  margin-bottom: 1rem;
+}
+
+.game-stats p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.end-button {
+  background-color: #e62e00;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.end-button:hover {
+  background-color: #cc2900;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .game-overlay {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+.game-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #0f0f1a;
+  overflow: hidden;
+}
+
+#game-container {
+  width: 100%;
+  height: calc(100vh - 64px);
+  margin-top: 64px; /* Account for navbar */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.game-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.game-stats {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.end-button {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.game-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #0f0f1a;
+}
+
+.settings-form {
+  background-color: #242442;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: white;
+}
+
+.start-button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+#game-container.with-chat {
+  width: calc(100% - 300px);
+}
+
+.game-overlay {
+  position: absolute;
+  top: 20px;
+  right: 320px; /* Account for chat width */
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  #game-container.with-chat {
+    width: 100%;
+  }
+  
+  .chat-box {
+    width: 250px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .chat-box.visible {
+    transform: translateX(0);
+  }
+  
+  .chat-toggle {
+    position: absolute;
+    top: 74px;
+    right: 10px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+    cursor: pointer;
+  }
+} 
